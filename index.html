@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo | Professora Nivalda Vilela Rosa</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+    --pink: #ff6f91;
+    --yellow: #ffc75f;
+    --blue: #4d96ff;
+    --green: #6bcf63;
+    --purple: #845ec2;
+    --dark: #333;
+    --bg: #fffaf2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fff1c1, #e3f2fd);
+    padding: 20px;
+}
+
+/* BOTÃO FLUTUANTE */
+.print-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+.print-btn:hover {
+    background: #3578e5;
+}
+
+/* CONTAINER */
+.resume {
+    max-width: 980px;
+    margin: auto;
+    background: var(--bg);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border: 5px dashed var(--yellow);
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    color: #fff;
+    padding: 45px 30px;
+    text-align: center;
+    position: relative;
+	border-radius: 25px;
+}
+
+/*.header::after {
+    content: "📚 ✏️ 🎨 🧸";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    font-size: 26px;
+}*/
+
+/* CONTENT */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: -10px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: linear-gradient(180deg, #fff, #f1f8ff);
+    padding: 30px;
+    border-right: 4px dotted var(--blue);
+
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: var(--purple);
+}
+
+.contact p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.contact i {
+    color: var(--pink);
+    margin-right: 8px;
+}
+
+/* MAIN */
+.main {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    border-left: 8px solid var(--green);
+}
+
+.section:nth-child(2) { border-left-color: var(--blue); }
+.section:nth-child(3) { border-left-color: var(--yellow); }
+.section:nth-child(4) { border-left-color: var(--pink); }
+
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--purple);
+}
+
+.section p,
+.section li {
+    font-size: 15px;
+    color: var(--dark);
+    line-height: 1.8;
+}
+
+ul {
+    margin-left: 18px;
+}
+
+.job {
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .print-btn {
+        bottom: 18px;
+        right: 18px;
+        padding: 14px;
+        border-radius: 50%;
+    }
+
+    .print-btn span {
+        display: none;
+    }
+}
+
+/* IMPRESSÃO A4 */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-btn {
+        display: none;
+    }
+
+    .resume {
+        width: 210mm;
+        margin: 0 auto;
+        border: none;
+        box-shadow: none;
+        border-radius: 0px;
+        background: #fff;
+    }
+
+    .header {
+        border-radius: 25px;
+        padding: 35px 25px;
+        text-align: center;
+    }
+
+    /* FORÇA LAYOUT MOBILE */
+    .content {
+        display: block !important;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid #000;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+		border-radius: 15px;
+    }
+
+    .main {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .section {
+        box-shadow: none;
+        border-left: 6px solid #000;
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .section p,
+    .section li,
+    .job {
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .header p {
+        font-size: 22px;
+    }
+
+    ul {
+        margin-left: 10px;
+    }
+}
+/* DOCK MOBILE */
+.mobile-dock {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-dock {
+        position: fixed;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,1.15%);
+        backdrop-filter: blur(3px);
+        border-radius: 30px;
+        padding: 5px 20px;
+        display: flex;
+        gap: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,1.25);
+        z-index: 1000;
+    }
+
+    .dock-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, var(--pink), var(--purple));
+        color: #fff;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+    }
+
+    .dock-btn.whatsapp {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+    }
+
+    .dock-btn.email {
+        background: linear-gradient(135deg, #ff6f91, #ff9671);
+    }
+
+    .dock-btn.print {
+        background: linear-gradient(135deg, #4d96ff, #1e63d8);
+    }
+
+    /* Remove botão flutuante normal no mobile */
+    .print-btn {
+        display: none;
+    }
+}
+
+</style>
+</head>
+<script>
+	function abrirWhatsapp() {
+		const numero = "5535992172174"; // formato internacional
+		const mensagem = encodeURIComponent("Olá, Nivalda! Vi seu currículo online e gostaria de conversar com você.");
+		const link = `https://wa.me/${numero}?text=${mensagem}`;
+		window.open(link, "_blank");
+	}
+
+	function abrirEmail() {
+		const email = "nivalda025@hotmail.com";
+		const assunto = encodeURIComponent("Contato através do currículo online");
+		const corpo = encodeURIComponent("Olá Nivalda,\n\nVi seu currículo online e gostaria de conversar com você.\n\nAtenciosamente,");
+		const link = `mailto:${email}?subject=${assunto}&body=${corpo}`;
+		window.location.href = link;
+	}
+</script>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+    <i class="fa-solid fa-file-pdf"></i>
+    <span>Imprimir / Salvar em PDF</span>
+</button>
+
+<div class="resume">
+
+    <div class="header">
+        <h1>Nivalda Vilela Rosa</h1>
+        <p>Educadora apaixonada por ensinar, inspirar e transformar o futuro das crianças.</p>
+		<p>• Apoio Escolar • Profissional Administrativa •</p>
+    </div>
+
+    <div class="content">
+
+        <aside class="sidebar">
+            <h2>👩‍🏫 Sobre Mim</h2>
+            <div class="contact">
+                <p>💍 Casada • Brasileira </p>
+				<p>🎂 Março/1983</p>
+                <p>📍 Pouso Alegre - MG</p>
+				<p onclick="abrirEmail()" style="cursor:pointer;">
+				📧 <strong>E-mail:</strong> nivalda025@hotmail.com</p>
+				<p onclick="abrirWhatsapp()" style="cursor:pointer; margin: 0px;">
+				📱 <strong>WhatsApp:</strong> (35) 99217-2174</p>
+				<p onclick="abrirWhatsapp()" style="cursor:pointer;">
+				📱 <strong>WhatsApp:</strong> (35) 99131-8185</p>	
+			</div>
+			</br>
+            <h2>🌍 Idioma</h2>
+            <p>Português — Nativo</p>
+			</br>
+            <div class="section-cursos">
+                <h2>📚 Cursos Complementares</h2>
+                <ul>
+                    <li>Técnico em Administração (2 anos)</li>
+                    <li>Auxiliar de Farmácia (5 meses)</li>
+                    <li>Atendimento ao Turista (40 horas)</li>
+                    <li>Informática Básica (1 ano)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <div class="section">
+                <h2>🎯 Missão Profissional</h2>
+                <p>
+                    Atuar na educação infantil com dedicação, carinho e responsabilidade,
+                    contribuindo para o desenvolvimento integral das crianças e para a construção
+                    de um ambiente de aprendizagem alegre, seguro e estimulante.
+                </p>
+            </div>
+			<div class="section">
+                <h2>🎓 Formação Acadêmica</h2>
+                <ul>
+                    <li>Ensino Médio Completo</li>
+                    <li>Licenciatura em Pedagogia</li>
+                    <li>Pós-graduação em Alfabetização e Letramento (cursando)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🏫 Experiência Profissional</h2>
+
+                <div class="job">
+                    <strong>• Malu Joias</strong><br>
+                    Auxiliar de Vendas — Atendimento ao público e organização (2 anos)
+                </div>
+
+                <div class="job">
+                    <strong>• Consultório Odontológico Patrícia Abdenor</strong><br>
+                    Secretária e Auxiliar de Dentista — Atendimento, agenda e apoio clínico (6 anos)
+                </div>
+
+                <div class="job">
+                    <strong>• Johnson Controls</strong><br>
+                    Operadora de Máquina de Costura — Produção industrial (3 meses)
+                </div>
+
+                <div class="job">
+                    <strong>• Carp Brasil</strong><br>
+                    Voluntária — Projetos educativos e sociais com jovens (2 anos)
+                </div>
+
+                <div class="job">
+                    <strong>• Creche Antonio Rafael Andery (Creche Lions)</strong><br>
+                    Auxiliar de Professores e Profissional de Apoio — Cuidado, educação e desenvolvimento infantil (2 anos e 7 meses)
+                </div>
+
+                <div class="job">
+                    <strong>• Creche Claudia Marques Primeiros Passos (CMP CIMED)</strong><br>
+                    Monitora II — Planejamento pedagógico e acompanhamento das crianças (2 anos e 2 meses)
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+</div>
+<!-- DOCK MOBILE -->
+<div class="mobile-dock">
+    <button class="dock-btn whatsapp" onclick="abrirWhatsapp()">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <button class="dock-btn email" onclick="abrirEmail()">
+        <i class="fas fa-envelope"></i>
+    </button>
+
+    <button class="dock-btn print" onclick="window.print()">
+        <i class="fa-solid fa-file-pdf"></i>
+    </button>
+</div>
+
+</body>
+</html>
