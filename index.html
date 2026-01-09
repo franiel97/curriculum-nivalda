@@ -28,7 +28,7 @@
 
 body {
     background: linear-gradient(135deg, #fff1c1, #e3f2fd);
-    padding: 20px;
+    padding: 10px;
 }
 
 /* BOTÃO FLUTUANTE */
@@ -88,14 +88,16 @@ body {
 .content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin-top: -10px;
+    margin-top: 5px;
 }
 
 /* SIDEBAR */
 .sidebar {
     background: linear-gradient(180deg, #fff, #f1f8ff);
-    padding: 30px;
-    border-right: 4px dotted var(--blue);
+    padding: 20px;
+    border: 2px dotted var(--blue);
+	border-radius: 25px;
+	margin-bottom: 15px;
 
 }
 
@@ -118,21 +120,22 @@ body {
 
 /* MAIN */
 .main {
-    padding: 30px;
+    padding: 10px;
 }
 
 .section {
     margin-bottom: 30px;
     background: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
+    padding: 10px;
+    border-radius: 20px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.05);
     border-left: 8px solid var(--green);
+	/*margin-top: 15px;*/
 }
 
 .section:nth-child(2) { border-left-color: var(--blue); }
 .section:nth-child(3) { border-left-color: var(--yellow); }
-.section:nth-child(4) { border-left-color: var(--pink); }
+.section:nth-child(1) { border-left-color: var(--pink); }
 
 .section h2 {
     font-size: 22px;
