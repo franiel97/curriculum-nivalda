@@ -21,14 +21,14 @@
 
 * {
     margin: 0;
-    padding: 0;
+    /*padding: 0;*/
     box-sizing: border-box;
     font-family: "Comic Sans MS", "Segoe UI", Arial, sans-serif;
 }
 
 body {
     background: linear-gradient(90deg, #fff1c1, #e3f2fd);
-    padding: 10px;
+    padding: 20px;
 }
 
 /* BOTÃO FLUTUANTE */
@@ -52,7 +52,16 @@ body {
 
 .print-btn:hover {
     background: #3578e5;
+	text-align: center;
 }
+
+.copy p{
+    margin-top: 20px;
+	text-align: center;
+	font-size: 12px;
+	color: var(--dark);
+}
+
 
 /* CONTAINER */
 .resume {
@@ -118,6 +127,12 @@ body {
     margin-right: 8px;
 }
 
+.cursos-itens li{
+    font-size: 15px;
+    margin-bottom: 12px;
+	padding-left: 20px;
+}
+
 /* MAIN */
 .main {
     padding: 10px;
@@ -174,6 +189,13 @@ ul {
     .print-btn span {
         display: none;
     }
+}
+
+.copy p{
+    margin-top: 10px;
+	text-align: center;
+	font-size: 14px;
+	color: var(--dark);
 }
 
 /* IMPRESSÃO A4 */
@@ -260,6 +282,10 @@ ul {
     ul {
         margin-left: 10px;
     }
+	.copy p{
+		display: none;
+	}
+
 }
 /* DOCK MOBILE */
 .mobile-dock {
@@ -308,6 +334,13 @@ ul {
     .dock-btn.print {
         background: linear-gradient(135deg, #4d96ff, #1e63d8);
     }
+	.copy p{
+	text-align: left;
+	font-size: 12px;
+	color: var(--dark);
+	padding-right: 75%;
+	}
+
 
     /* Remove botão flutuante normal no mobile */
     .print-btn {
@@ -327,6 +360,12 @@ ul {
 	}
 	function abrirWhatsapp2() {
 		const numero = "5535991318185";
+		const mensagem = encodeURIComponent("Olá, Nivalda! Vi seu currículo online e gostaria de conversar com você.");
+		const link = `https://wa.me/${numero}?text=${mensagem}`;
+		window.open(link, "_blank");
+	}
+	function abrirWhatsapp3() {
+		const numero = "5511992091856";
 		const mensagem = encodeURIComponent("Olá, Nivalda! Vi seu currículo online e gostaria de conversar com você.");
 		const link = `https://wa.me/${numero}?text=${mensagem}`;
 		window.open(link, "_blank");
@@ -351,7 +390,7 @@ ul {
     <div class="header">
         <h1>Nivalda Vilela Rosa</h1>
         <p>Educadora apaixonada por ensinar, inspirar e transformar o futuro das crianças.</p>
-		<p>• Apoio Escolar • Profissional Administrativa •</p>
+		<p>• Apoio Escolar • Educadora • Profissional Administrativa •</p>
     </div>
 
     <div class="content">
@@ -397,9 +436,9 @@ ul {
 			<div class="section">
                 <h2>🎓 Formação Acadêmica</h2>
                 <ul>
-                    <li>Ensino Médio Completo.</li>
+				    <li><strong>[Cursando]</strong> Pós-graduação em Alfabetização e Letramento.</li>
                     <li>Licenciatura em Pedagogia.</li>
-                    <li><strong>[Cursando]</strong> Pós-graduação em Alfabetização e Letramento.</li>
+                    <li>Ensino Médio Completo.</li>
                 </ul>
             </div>
 
@@ -408,8 +447,8 @@ ul {
 
                 <div class="job">
                     <strong>• Malu Joias</strong> [2 anos]<br>
-                    <p>Auxiliar de Vendas — Atendimento ao público e organização.</p>
-                </div>
+					<p>Auxiliar de Vendas — Atendimento ao público e organização.</p>
+				</div>
 
                 <div class="job">
                     <strong>• Consultório Odontológico Patrícia Abdenor</strong> [6 anos]<br>
@@ -432,16 +471,20 @@ ul {
                 </div>
 
                 <div class="job">
-                    <strong>• Creche Claudia Marques Primeiros Passos (CMP CIMED)</strong> [2 anos e 2 meses]<br>
+                    <strong> • Creche Claudia Marques Primeiros Passos (CMP CIMED)</strong> [2 anos e 2 meses]<br>
                    <p>Monitora II — Planejamento pedagógico e acompanhamento das crianças.</p>
                 </div>
 
             </div>
 
         </main>
-
     </div>
+
 </div>
+	<div class="copy">
+			<p>Desenvolvido por: <a href="https://wa.me/5511992091856?text=$Olá, Franiel!">Franiel.Inc | 2026</a></p>
+	</div>
+
 <!-- DOCK MOBILE -->
 <div class="mobile-dock">
     <button class="dock-btn whatsapp" onclick="abrirWhatsapp()">
@@ -459,4 +502,3 @@ ul {
 
 </body>
 </html>
-
