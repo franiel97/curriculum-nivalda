@@ -5,7 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Currículo | Nivalda Vilela Rosa</title>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+<text y='50' font-size='50'>👩🏾‍🦰</text>
+</svg>">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -28,14 +34,14 @@
 
 body {
     background: linear-gradient(90deg, #fff1c1, #e3f2fd);
-    padding: 20px;
+    padding: 10px;
 }
 
 /* BOTÃO FLUTUANTE */
 .print-btn {
     position: fixed;
-    bottom: 25px;
-    right: 50px;
+    bottom: 50px;
+    right: 10px;
     background: var(--blue);
     color: #fff;
     border: none;
@@ -55,10 +61,10 @@ body {
 	text-align: center;
 }
 
-.copy p{
+.copy{
     margin-top: 20px;
 	text-align: center;
-	font-size: 12px;
+	font-size: 14px;
 	color: var(--dark);
 }
 
@@ -103,10 +109,10 @@ body {
 /* SIDEBAR */
 .sidebar {
     background: linear-gradient(180deg, #fff, #f1f8ff);
-    padding: 20px;
+    padding: 10px;
     border: 2px dotted var(--blue);
-	border-radius: 25px;
-	margin-bottom: 15px;
+    border-radius: 25px;
+    margin: 15px 5px 15px 5px;
 
 }
 
@@ -116,6 +122,20 @@ body {
     color: var(--purple);
 }
 
+.abaout p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.abaout i {
+    margin-right: 8px;
+}
+
+.contact {
+	margin-top: 1.4em;
+}
+
 .contact p {
     font-size: 15px;
     margin-bottom: 12px;
@@ -123,7 +143,7 @@ body {
 }
 
 .contact i {
-    color: var(--pink);
+    color: var(--blue);
     margin-right: 8px;
 }
 
@@ -165,12 +185,12 @@ body {
     line-height: 1.8;
 }
 
-ul {
-    margin-left: 18px;
-}
-
 .job {
     margin-bottom: 15px;
+}
+
+ul {
+	padding-left: 20px !important;
 }
 
 /* RESPONSIVO */
@@ -191,102 +211,103 @@ ul {
     }
 }
 
-.copy p{
-    margin-top: 10px;
+.copy{
+    margin: 25px 0 -5px 0
 	text-align: center;
-	font-size: 14px;
+	font-size: 12px;
 	color: var(--dark);
 }
 
 /* IMPRESSÃO A4 */
 @media print {
+
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
     body {
         background: none;
         padding: 0;
         margin: 0;
+		
         font-family: Arial, sans-serif;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .print-btn {
-        display: none;
-    }
-	
-	/* ESCONDE A DOCK NO PDF */
-    .mobile-dock {
+    .print-btn,
+    .mobile-dock,
+    .copy {
         display: none !important;
     }
-	
 
     .resume {
-        width: 210mm;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 210mm;
+        margin: auto;
         border: none;
         box-shadow: none;
-        border-radius: 0px;
+        border-radius: 0;
         background: #fff;
     }
 
     .header {
-        border-radius: 25px;
-        padding: 35px 25px;
-        text-align: center;
+        border-radius: 0;
+        padding: 25px 20px;
+        page-break-inside: avoid;
+		border-radius: 20px;
     }
 
-    /* FORÇA LAYOUT MOBILE */
+    /* MANTÉM GRID DESKTOP */
     .content {
-        display: block !important;
+        display: grid !important;
+        grid-template-columns: 1fr 2fr !important;
+        gap: 10px;
+
     }
 
     .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 3px solid #000;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-		border-radius: 15px;
+        border-radius: 20px;
+        margin: 10px;
+        page-break-inside: auto;
     }
 
     .main {
-        width: 100%;
-        padding: 0px;
+        padding: 0;
     }
 
     .section {
         box-shadow: none;
-        border-left: 6px solid #000;
-        margin-bottom: 10px;
+        margin: 10px 0 0 0;
+        page-break-inside: avoid;
+
+    }
+
+    .job {
         page-break-inside: avoid;
     }
 
+    h1 {
+        font-size: 30px;
+    }
+
     .section h2 {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .section p,
     .section li,
     .job {
-        font-size: 18px;
-        line-height: 2;
+        font-size: 13px;
+        line-height: 1.6;
     }
-
-    .header h1 {
-        font-size: 38px;
-    }
-
-    .header p {
-        font-size: 22px;
-    }
-
-    ul {
-        margin-left: 10px;
-    }
-	.copy p{
-		display: none;
-	}
 
 }
+
+
+
+
 /* DOCK MOBILE */
 .mobile-dock {
     display: none;
@@ -295,15 +316,15 @@ ul {
 @media (max-width: 768px) {
     .mobile-dock {
         position: fixed;
-        bottom: 18px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         background: rgba(255,255,255,1.15%);
         backdrop-filter: blur(3px);
         border-radius: 30px;
-        padding: 5px 20px;
-        display: flex;
-        gap: 25px;
+		padding: 5px 10px;       
+		display: flex;
+        gap: 10px;
         box-shadow: 0 10px 25px rgba(0,0,0,1.25);
         z-index: 1000;
     }
@@ -334,13 +355,11 @@ ul {
     .dock-btn.print {
         background: linear-gradient(135deg, #4d96ff, #1e63d8);
     }
-	.copy p{
+	.copy{
         text-align: center;
         font-size: 12px;
         color: var(--dark);
-        margin: auto;
-        margin-top: 28px;
-        margin-bottom: -18px;
+        margin: 30px 0 -5px 0;
 	}
 
 
@@ -399,16 +418,18 @@ ul {
 
         <aside class="sidebar">
             <h2>👩‍🏫 Sobre Mim</h2>
-            <div class="contact">
+            <div class="abount">
                 <p>💍 Casada • Brasileira </p>
 				<p>🎂 Março/1983</p>
                 <p>📍 Maria da Fé - MG</p>
-				<p onclick="abrirEmail()" style="cursor:pointer; border: 2px dotted var(--yellow); border-radius: 50px; padding-left: 5px; text-align: center;">
-				📧<strong>E-mail:</strong> nivalda025@hotmail.com</p>
-				<p onclick="abrirWhatsapp()" style="cursor:pointer; border: 2px dotted var(--green); border-radius: 50px; padding-left: 5px; text-align: center;">
-				📱<strong>WhatsApp:</strong><br> (35) 99217-2174</p>
-				<p onclick="abrirWhatsapp2()" style="cursor:pointer; border: 2px dotted var(--green); border-radius: 50px; padding-left: 5px; text-align: center; ">
-				📱<strong>WhatsApp:</strong><br> (35) 99150-6150</p>
+				<div class="contact">
+					<p onclick="abrirEmail()" style="cursor:pointer; border: 2px dotted var(--yellow); border-radius: 50px; padding-left: 5px; text-align: center;">
+					📧<strong>E-mail:</strong><br> nivalda025@hotmail.com</p>
+					<p onclick="abrirWhatsapp()" style="cursor:pointer; border: 2px dotted var(--green); border-radius: 50px; padding-left: 5px; text-align: center;">
+					<i class="fa-solid fa-phone"></i><i class="fa-brands fa-whatsapp" style="color: green;"></i> (35) 99217-2174</p>
+					<p onclick="abrirWhatsapp2()" style="cursor:pointer; border: 2px dotted var(--green); border-radius: 50px; padding-left: 5px; text-align: center; ">
+					<i class="fa-solid fa-phone"></i><i class="fa-brands fa-whatsapp" style="color: green;"></i> (35) 99150-6150</p>
+				</div>					
 			</div>
 			</br>
             <h2>🌍 Idioma</h2>
@@ -417,10 +438,10 @@ ul {
             <div class="section-cursos">
                 <h2>📚 Cursos Complementares</h2>
                 <ul>
-                    <li>Técnico em Administração (2 anos)</li>
-                    <li>Auxiliar de Farmácia (5 meses)</li>
-                    <li>Atendimento ao Turista (40 horas)</li>
-                    <li>Informática Básica (1 ano)</li>
+                    <li>Técnico em Administração [2 anos]</li>
+                    <li>Auxiliar de Farmácia [5 meses]</li>
+                    <li>Atendimento ao Turista [40 horas]</li>
+                    <li>Informática Básica [1 ano]</li>
                 </ul>
             </div>
         </aside>
@@ -446,36 +467,31 @@ ul {
 
             <div class="section">
                 <h2>🏫 Experiência Profissional</h2>
-
+				
+				<div class="job">
+                    <strong> • Creche Claudia Marques Primeiros Passos (CMP CIMED)</strong> [2 anos e 2 meses]<br>
+                   <p>Monitora II — Planejamento pedagógico e acompanhamento das crianças.</p>
+                </div>
                 <div class="job">
-                    <strong>• Malu Joias</strong> [2 anos]<br>
-					<p>Auxiliar de Vendas — Atendimento ao público e organização.</p>
-				</div>
-
+                    <strong>• Creche Antonio Rafael Andery (Creche Lions)</strong> [2 anos e 7 meses]<br>
+                    <p>Auxiliar de Professores e Profissional de Apoio — Cuidado, educação e desenvolvimento infantil.</p>
+                </div>				
+                <div class="job">
+                    <strong>• Carp Brasil</strong> [2 anos]<br>
+                    <p>Voluntária — Projetos educativos e sociais com jovens.</p>
+                </div>				
+                <div class="job">
+                    <strong>• Johnson Controls</strong> [3 meses]<br>
+                    <p>Operadora de Máquina de Costura — Produção industrial.</p>
+                </div>				
                 <div class="job">
                     <strong>• Consultório Odontológico Patrícia Abdenor</strong> [6 anos]<br>
                     <p>Secretária e Auxiliar de Dentista — Atendimento, agenda e apoio clínico.</p>
                 </div>
-
                 <div class="job">
-                    <strong>• Johnson Controls</strong> [3 meses]<br>
-                    <p>Operadora de Máquina de Costura — Produção industrial.</p>
-                </div>
-
-                <div class="job">
-                    <strong>• Carp Brasil</strong> [2 anos]<br>
-                    <p>Voluntária — Projetos educativos e sociais com jovens.</p>
-                </div>
-
-                <div class="job">
-                    <strong>• Creche Antonio Rafael Andery (Creche Lions)</strong> [2 anos e 7 meses]<br>
-                    <p>Auxiliar de Professores e Profissional de Apoio — Cuidado, educação e desenvolvimento infantil.</p>
-                </div>
-
-                <div class="job">
-                    <strong> • Creche Claudia Marques Primeiros Passos (CMP CIMED)</strong> [2 anos e 2 meses]<br>
-                   <p>Monitora II — Planejamento pedagógico e acompanhamento das crianças.</p>
-                </div>
+                    <strong>• Malu Joias</strong> [2 anos]<br>
+					<p>Auxiliar de Vendas — Atendimento ao público e organização.</p>
+				</div>
 
             </div>
 
@@ -484,13 +500,17 @@ ul {
 
 </div>
 	<div class="copy">
-			<p>Desenvolvido por: <a href="https://wa.me/5511992091856?text=$Olá, Franiel!" style="color: #ff6f91;">Franiel.Inc | 2026</a></p>
+			<p>Desenvolvido por: <a href="https://wa.me/5511992091856?text=$Olá, Franiel Tech!" style="color: #ff6f91;">Franiel.Tech | 2026</a></p>
 	</div>
 
 <!-- DOCK MOBILE -->
 <div class="mobile-dock">
     <button class="dock-btn whatsapp" onclick="abrirWhatsapp()">
         <i class="fab fa-whatsapp"></i>
+    </button>
+	
+    <button class="dock-btn whatsapp" onclick="abrirWhatsapp2()">
+        <i class="fab fa-whatsapp" style="color: #06402B"></i>
     </button>
 
     <button class="dock-btn email" onclick="abrirEmail()">
@@ -504,5 +524,3 @@ ul {
 
 </body>
 </html>
-
-
