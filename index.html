@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Currículo | Nivalda Vilela Rosa</title>
+<title></title>
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
@@ -409,7 +409,7 @@ ul {
 <div class="resume">
 
     <div class="header">
-        <h1>Nivalda Vilela Rosa</h1>
+        <h1 id="nome">Nivalda Vilela Rosa</h1>
         <p>Educadora apaixonada por ensinar, inspirar e transformar o futuro das crianças.</p>
 		<p>• Apoio Escolar • Educadora • Profissional Administrativa •</p>
     </div>
@@ -523,5 +523,23 @@ ul {
 </div>
 
 </body>
+	<script>
+  const elementoTitulo = document.getElementById('nome');
+
+  function atualizarTitulo() {
+    document.title = ('Currículo | ' + elementoTitulo.textContent.trim());
+  }
+	
+  // Define o título assim que a página carrega
+  atualizarTitulo();
+
+  // Observa mudanças no conteúdo do elemento e atualiza o título automaticamente
+  const observer = new MutationObserver(atualizarTitulo);
+  observer.observe(elementoTitulo, { 
+    childList: true,   // mudanças no texto/filhos
+    characterData: true, 
+    subtree: true 
+  });
+</script>
 </html>
 
